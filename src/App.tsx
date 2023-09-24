@@ -4,8 +4,13 @@ import type { MouseEvent } from 'react'
 import logo from './logo.svg'
 
 function App() {
-  const add = (event: MouseEvent<HTMLButtonElement>) => {
-    console.log(event, 111)
+  const flag = true
+  const add = (event: MouseEvent<HTMLButtonElement>, num: number) => {
+    console.log(event, num)
+  }
+  const Hello = () => {
+    if (flag) return <p>666</p>
+    return <p>999</p>
   }
   return (
     <div className="App">
@@ -23,7 +28,12 @@ function App() {
           Learn React
         </a>
         <div>
-          <button onClick={add}>add</button>
+          <button onClick={event => add(event, 6666)}>add</button>
+        </div>
+        <div>
+          <p>{flag && 222}</p>
+          <p>{flag ? 111 : '000'}</p>
+          <Hello></Hello>
         </div>
       </header>
     </div>
