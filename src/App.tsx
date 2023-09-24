@@ -12,6 +12,11 @@ function App() {
     if (flag) return <p>666</p>
     return <p>999</p>
   }
+  const list = [
+    { id: 1, name: 'aa' },
+    { id: 2, name: 'bb' },
+    { id: 3, name: 'cc' }
+  ]
   return (
     <div className="App">
       <header className="App-header">
@@ -34,6 +39,13 @@ function App() {
           <p>{flag && 222}</p>
           <p>{flag ? 111 : '000'}</p>
           <Hello></Hello>
+        </div>
+        <div>
+          <ol>
+            {list.map(item => {
+              return <li key={item.id}>{item.name}</li>
+            })}
+          </ol>
         </div>
       </header>
     </div>
