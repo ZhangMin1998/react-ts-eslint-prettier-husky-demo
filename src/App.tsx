@@ -1,53 +1,35 @@
 import React from 'react'
 import './App.css'
-import type { MouseEvent } from 'react'
-import logo from './logo.svg'
+// import type { MouseEvent } from 'react'
 
 function App() {
-  const flag = true
-  const add = (event: MouseEvent<HTMLButtonElement>, num: number) => {
-    console.log(event, num)
-  }
-  const Hello = () => {
-    if (flag) return <p>666</p>
-    return <p>999</p>
-  }
-  const list = [
-    { id: 1, name: 'aa' },
-    { id: 2, name: 'bb' },
-    { id: 3, name: 'cc' }
+  // 列表页
+
+  // 问卷列表数据
+  const questionList = [
+    { id: 'q1', title: '问题1', isPublished: false },
+    { id: 'q2', title: '问题2', isPublished: true },
+    { id: 'q3', title: '问题3', isPublished: false },
+    { id: 'q4', title: '问题4', isPublished: true }
   ]
+  const edit = (id:string) => {
+    console.log('edit', id)
+  }
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <div>
-          <button onClick={event => add(event, 6666)}>add</button>
-        </div>
-        <div>
-          <p>{flag && 222}</p>
-          <p>{flag ? 111 : '000'}</p>
-          <Hello></Hello>
-        </div>
-        <div>
-          <ol>
-            {list.map(item => {
-              return <li key={item.id}>{item.name}</li>
-            })}
-          </ol>
-        </div>
-      </header>
+    <div>
+      <h1>问卷列表页</h1>
+      <div>
+        { questionList.map(item => {
+          return <div key={item.id} className='list-item'>
+            <strong>{item.title}</strong>
+            &nbsp;
+            { item.isPublished ? <span style={{ color: 'blue' }}>已发布</span> : <span>未发布</span> }
+            &nbsp;
+            <button onClick={() => edit(item.id)}>编辑问题</button>
+          </div>
+        })}
+      </div>
     </div>
   )
 }
