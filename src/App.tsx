@@ -1,14 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './App.css'
 // import type { MouseEvent } from 'react'
 
 import List1 from './List1'
 
 function App() {
-  let count = 0 // 普通的JS变量，无法触发组件的更新
+  // let count = 0 // 普通的JS变量，无法触发组件的更新
+  const [count, setCount] = useState(0)
 
   const add = () => {
-    count++
+    setCount(count + 1)
   }
   return (
     <>
