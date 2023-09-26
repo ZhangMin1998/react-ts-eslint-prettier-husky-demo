@@ -3,6 +3,7 @@ import './App.css'
 // import type { MouseEvent } from 'react'
 
 import List1 from './List1'
+import List2 from './List2'
 import StateDemo from './StateDemo'
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <button onClick={add}>{count}</button>
       </div>
       <StateDemo />
+      <List2 />
     </>
   )
 }
