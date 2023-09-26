@@ -5,7 +5,9 @@ type PropsType = {
   id: string
   title: string
   isPublished: boolean,
+  // eslint-disable-next-line
   deleteQuestion?: (id: string) => void,
+  // eslint-disable-next-line
   pubQuestion?: (id: string) => void
 }
 

@@ -2,9 +2,10 @@ import React, { useState } from 'react'
 import './App.css'
 // import type { MouseEvent } from 'react'
 
-import List1 from './List1'
+// import List1 from './List1'
 import List2 from './List2'
 import StateDemo from './StateDemo'
+import ImmerDemo from './ImmerDemo'
 
 function App() {
   // let count = 0 // 普通的JS变量，无法触发组件的更新
@@ -15,12 +16,13 @@ function App() {
   }
   return (
     <>
-      <List1 />
+      {/* <List1 /> */}
       <div>
         <button onClick={add}>{count}</button>
       </div>
       <StateDemo />
       <List2 />
+      <ImmerDemo />
     </>
   )
 }
