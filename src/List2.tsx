@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react'
+import React, { FC, useState, useEffect } from 'react'
 // import type { FC } from 'react'
 import { produce } from 'immer'
 
@@ -40,6 +40,15 @@ const List2: FC = () => {
       draft[index].isPublished = true
     }))
   }
+
+  // useEffect
+  useEffect(() => {
+    console.log('加载ajax网络请求')
+  }, []) // []无依赖
+
+  useEffect(() => {
+    console.log('questionList change')
+  }, [questionList]) // 
   
   return (
     <div>
