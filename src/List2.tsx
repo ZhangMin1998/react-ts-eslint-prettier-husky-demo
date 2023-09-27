@@ -1,5 +1,6 @@
 import React, { FC, useState } from 'react'
 // import type { FC } from 'react'
+import { produce } from 'immer'
 
 import QuestionCard from './components/QuestionCard'
 
@@ -12,22 +13,31 @@ const List2: FC = () => {
     { id: 'q4', title: '问题4', isPublished: true }
   ])
   const addList = () => {
-    setQuestionList(questionList.concat({
-      id: 'q' + Math.random().toString().slice(-3), title: '问题5', isPublished: true
+    // setQuestionList(questionList.concat({
+    //   id: 'q' + Math.random().toString().slice(-3), title: '问题5', isPublished: true
+    // }))
+    setQuestionList(produce(draft => {
+      draft.push({ id: 'q' + Math.random().toString().slice(-3), title: '问题5', isPublished: false })
     }))
   }
   const deleteQuestion = (id: string) => {
-    console.log(id)
-    setQuestionList(questionList.filter(item => item.id !== id))
+    // setQuestionList(questionList.filter(item => item.id !== id))
+    setQuestionList(produce(draft => {
+      const index = draft.findIndex(q => q.id === id)
+      draft.splice(index, 1)
+    }))
   }
   const pubQuestion = (id: string) => {
-    console.log(id)
-    setQuestionList(questionList.map(item => {
-      if (item.id !== id) return item
-      return {
-        ...item,
-        isPublished: true
-      }
+    // setQuestionList(questionList.map(item => {
+    //   if (item.id !== id) return item
+    //   return {
+    //     ...item,
+    //     isPublished: true
+    //   }
+    // }))
+    setQuestionList(produce(draft => {
+      const index = draft.findIndex(q => q.id === id)
+      draft[index].isPublished = true
     }))
   }
   
