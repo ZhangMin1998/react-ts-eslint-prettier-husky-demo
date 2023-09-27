@@ -1,4 +1,4 @@
-import React, { FC, useEffect } from 'react'
+import React, { FC } from 'react'
 import './index.css'
 
 type PropsType = {
@@ -20,12 +20,12 @@ const questionCard: FC<PropsType> = (props) => {
     pubQuestion && pubQuestion(id)
   }
 
-  useEffect(() => {
-    console.log('q card mounted')
-    return () => {
-      console.log('q card unmounted')
-    }
-  })
+  // useEffect(() => {
+  //   console.log('q card mounted')
+  //   return () => {
+  //     console.log('q card unmounted')
+  //   }
+  // })
 
   return <div key={id} className='list-item'>
     <strong>{title}</strong>

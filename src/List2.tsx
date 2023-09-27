@@ -44,11 +44,14 @@ const List2: FC = () => {
   // useEffect
   useEffect(() => {
     console.log('加载ajax网络请求')
+    return () => {
+      console.log('销毁')
+    }
   }, []) // []无依赖
 
-  useEffect(() => {
-    console.log('questionList change')
-  }, [questionList]) // 
+  // useEffect(() => {
+  //   console.log('questionList change')
+  // }, [questionList]) // 
   
   return (
     <div>
@@ -65,3 +68,15 @@ const List2: FC = () => {
 }
 
 export default List2
+
+
+// useEffect
+// useEffect(() => {
+//   console.log('加载ajax网络请求')
+//   return () => {
+//     console.log('销毁')
+//   }
+// }, [])
+
+// React18开始， useEffect在开发环境下执行2次  生产环境下执行一次
+// 模拟组件创建、销毁、再创建的完整流程、及早暴露问题
