@@ -4,9 +4,10 @@ import './App.css'
 
 // import List1 from './List1'
 import List2 from './List2'
-import StateDemo from './StateDemo'
-import ImmerDemo from './ImmerDemo'
-import RefDemo from './RefDemo'
+import StateDemo from './useState'
+import ImmerDemo from './Immer'
+import RefDemo from './useRef'
+import UseMemoDemo from './useMemo'
 
 function App() {
   // let count = 0 // 普通的JS变量，无法触发组件的更新
@@ -25,6 +26,7 @@ function App() {
       <List2 />
       <ImmerDemo />
       <RefDemo />
+      <UseMemoDemo />
     </>
   )
 }
