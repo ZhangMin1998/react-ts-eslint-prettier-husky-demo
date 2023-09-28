@@ -6,6 +6,7 @@ import './App.css'
 import List2 from './List2'
 import StateDemo from './StateDemo'
 import ImmerDemo from './ImmerDemo'
+import RefDemo from './RefDemo'
 
 function App() {
   // let count = 0 // 普通的JS变量，无法触发组件的更新
@@ -23,6 +24,7 @@ function App() {
       <StateDemo />
       <List2 />
       <ImmerDemo />
+      <RefDemo />
     </>
   )
 }
