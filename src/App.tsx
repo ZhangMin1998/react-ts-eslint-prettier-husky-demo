@@ -8,6 +8,7 @@ import StateDemo from './useState'
 import ImmerDemo from './Immer'
 import RefDemo from './useRef'
 import UseMemoDemo from './useMemo'
+import UseCallbackDemo from './useCallback'
 
 function App() {
   // let count = 0 // 普通的JS变量，无法触发组件的更新
@@ -27,6 +28,7 @@ function App() {
       <ImmerDemo />
       <RefDemo />
       <UseMemoDemo />
+      <UseCallbackDemo />
     </>
   )
 }

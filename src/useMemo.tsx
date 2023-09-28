@@ -8,7 +8,7 @@ const UseMemoDemo: FC = () => {
   const [num2, setNum2] = useState(20)
   const [text, setText] = useState('zm') // 更新 导致组件rerender
 
-  const sum = useMemo(() => {
+  const sum = useMemo(() => { // useMemo缓存数据
     console.log('gen  sum。。。。') // 缓存
     
     return num1 + num2
