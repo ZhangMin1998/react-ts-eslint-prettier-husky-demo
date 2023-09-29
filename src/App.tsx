@@ -11,7 +11,8 @@ import RefDemo from './useRef'
 import UseMemoDemo from './useMemo'
 import UseCallbackDemo from './useCallback'
 
-import useTitle from './hooks/useTitle'
+import useTitle from './hooks/useTitle' // 自定义hooks
+// import { useTitle }  from 'ahooks' // 第三方hooks
 import useMouse from './hooks/useMouse'
 
 // function useTitle(title: string) {
