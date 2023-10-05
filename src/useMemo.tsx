@@ -2,7 +2,7 @@ import React, { FC, useMemo, useState } from 'react'
 
 
 const UseMemoDemo: FC = () => {
-  console.log('1111111')
+  console.log('1111111， useMemo')
   
   const [num1, setNum1] = useState(10)
   const [num2, setNum2] = useState(20)
