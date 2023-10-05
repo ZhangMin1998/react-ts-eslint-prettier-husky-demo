@@ -27,3 +27,6 @@ const RefDemo: FC = () => {
 
 
 export default RefDemo
+
+// useRef一般用于c操作DOM
+// 也可以传入普通JS变量，但不会触发rerender
