@@ -1,6 +1,8 @@
 import React, { FC } from 'react'
 import './index.css'
 
+import classnames from 'classnames'
+
 type PropsType = {
   id: string
   title: string
@@ -27,7 +29,16 @@ const questionCard: FC<PropsType> = (props) => {
   //   }
   // })
 
-  return <div key={id} className='list-item'>
+  // const itemClassName = classnames(
+  //   'list-item',
+  //   { isPublished: isPublished }
+  // )
+  const itemClassName = classnames({
+    'list-item': true,
+    isPublished: isPublished
+  })
+
+  return <div key={id} className={itemClassName}>
     <strong>{title}</strong>
     &nbsp;
     { isPublished ? <span style={{ color: 'blue' }}>已发布</span> : <span>未发布</span> }
