@@ -32,3 +32,9 @@ const UseMemoDemo: FC = () => {
 
 
 export default UseMemoDemo
+
+// useMemo
+// 函数组件，每次state更新都会重新执行函数
+// useMemo可以缓存数据，不用每次执行函数都重新生成
+// y用于计算量大的场景，缓存提高性能
+// 可以把useMemo作为性能优化的手段，但不要把他当成语义上的保证

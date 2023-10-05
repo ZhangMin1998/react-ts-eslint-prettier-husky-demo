@@ -9,11 +9,11 @@ import './App.css'
 // import ImmerDemo from './Immer'
 import RefDemo from './useRef'
 import UseMemoDemo from './useMemo'
-import UseCallbackDemo from './useCallback'
+// import UseCallbackDemo from './useCallback'
 
 import useTitle from './hooks/useTitle' // 自定义hooks
 // import { useTitle }  from 'ahooks' // 第三方hooks
-import useMouse from './hooks/useMouse'
+// import useMouse from './hooks/useMouse'
 
 // function useTitle(title: string) {
 //   useEffect(() => {
@@ -23,7 +23,7 @@ import useMouse from './hooks/useMouse'
 
 function App() {
   useTitle('app page')
-  const { x, y } = useMouse()
+  // const { x, y } = useMouse()
 
   // let count = 0 // 普通的JS变量，无法触发组件的更新
   const [count, setCount] = useState(0)
@@ -36,7 +36,7 @@ function App() {
   // }, [])
   return (
     <>
-      <p>{x}---{y}</p>
+      {/* <p>{x}---{y}</p> */}
       {/* <List1 /> */}
       <div>
         <button onClick={add}>{count}</button>
@@ -46,7 +46,7 @@ function App() {
       {/* <ImmerDemo /> */}
       <RefDemo />
       <UseMemoDemo />
-      <UseCallbackDemo />
+      {/* <UseCallbackDemo /> */}
     </>
   )
 }
