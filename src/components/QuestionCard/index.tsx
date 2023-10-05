@@ -1,5 +1,7 @@
 import React, { FC } from 'react'
-import './index.css'
+// import './index.css'
+// import './index.module.css'
+import styles from  './index.module.scss'
 
 import classnames from 'classnames'
 
@@ -33,15 +35,22 @@ const questionCard: FC<PropsType> = (props) => {
   //   'list-item',
   //   { isPublished: isPublished }
   // )
+  // const itemClassName = classnames({
+  //   'list-item': true,
+  //   isPublished: isPublished
+  // })
+
+  const listItemClass = styles['list-item']
+  const publishedClass = styles['published']
   const itemClassName = classnames({
-    'list-item': true,
-    isPublished: isPublished
+    [listItemClass]: true,
+    [publishedClass]: isPublished
   })
 
   return <div key={id} className={itemClassName}>
     <strong>{title}</strong>
     &nbsp;
-    { isPublished ? <span style={{ color: 'blue' }}>已发布</span> : <span>未发布</span> }
+    { isPublished ? <span className={styles['published-span']}>已发布</span> : <span>未发布</span> }
     &nbsp;
     <button onClick={() => pub(id)}>发布</button>
     <button onClick={() => del(id)}>删除</button>
