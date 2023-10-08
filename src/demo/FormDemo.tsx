@@ -18,6 +18,12 @@ const FormDemo: FC = () => {
     return { __html: text2.replaceAll('\n', '<br>') }
   }
 
+  // radio
+  const [gender, setGender] = useState<string>('male')
+  const handleChange3 = (event: ChangeEvent<HTMLInputElement>) => {
+    setGender(event.target.value)
+  }
+
   return (
     <>
       <div>
@@ -32,6 +38,14 @@ const FormDemo: FC = () => {
           <span>textarea</span>
           <textarea value={text2} onChange={handleChange2}/>
           <p dangerouslySetInnerHTML={getHtml()}></p>
+        </div>
+        <div>
+          <span>radio</span>
+          <label htmlFor="radio1">男</label>
+          <input type="radio" value='male' name='gender' id='radio1' onChange={handleChange3} checked={gender === 'male'}/>
+          <label htmlFor="radio2">女</label>
+          <input type="radio" value='female' name='gender' id='radio2' onChange={handleChange3} checked={gender === 'female'}/>
+          <button onClick={() => console.log(gender)}>打印{gender}</button>
         </div>
       </div>
     </>
