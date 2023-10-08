@@ -24,28 +24,63 @@ const FormDemo: FC = () => {
     setGender(event.target.value)
   }
 
+  // checkbox
+  // const [checked, setChecked] = useState(false)
+  // const handleChange4 = (event: ChangeEvent<HTMLInputElement>) => {
+  //   setChecked(!checked)
+  // }
+
+  // checkbox组
+  const [selectedFruitList, setselectedFruitList] = useState<string[]>([])
+  const handleChange5 = (event: ChangeEvent<HTMLInputElement>) => {
+    const fruit = event.target.value
+    if (selectedFruitList.includes(fruit)) {
+      setselectedFruitList(selectedFruitList.filter(f => {
+        if (f === fruit) return false
+        return true
+      }))
+    } else {
+      setselectedFruitList(selectedFruitList.concat(fruit))
+    }
+  }
+
   return (
     <>
       <div>
         FormDemo:
         <div>
-          <span>input:</span>
+          <span>input：</span>
           <input type="text" value={text} onChange={handleChange}/>
           <button onClick={() => console.log(text)}>打印</button>
           <button onClick={() => setText('66666666')}>set</button>
         </div>
         <div>
-          <span>textarea</span>
+          <span>textarea：</span>
           <textarea value={text2} onChange={handleChange2}/>
           <p dangerouslySetInnerHTML={getHtml()}></p>
         </div>
         <div>
-          <span>radio</span>
+          <span>radio：</span>
           <label htmlFor="radio1">男</label>
           <input type="radio" value='male' name='gender' id='radio1' onChange={handleChange3} checked={gender === 'male'}/>
           <label htmlFor="radio2">女</label>
           <input type="radio" value='female' name='gender' id='radio2' onChange={handleChange3} checked={gender === 'female'}/>
           <button onClick={() => console.log(gender)}>打印{gender}</button>
+        </div>
+        {/* <div>
+          <span>checkbox：</span> 
+          <label htmlFor="checkbox1">选中</label>
+          <input type="checkbox" id='checkbox' checked={checked} onChange={handleChange4}/>{checked.toString()}
+        </div> */}
+        <div>
+          <span>checkbox组：</span> 
+          <label htmlFor="checkbox1">苹果</label>
+          <input type="checkbox" id='checkbox1' value='apple' checked={selectedFruitList.includes('apple')} onChange={handleChange5}/>
+          <label htmlFor="checkbox2">橙子</label>
+          <input type="checkbox" id='checkbox2' value='orange' checked={selectedFruitList.includes('orange')} onChange={handleChange5}/>
+          <label htmlFor="checkbox3">香蕉</label>
+          <input type="checkbox" id='checkbox3' value='banana' checked={selectedFruitList.includes('banana')} onChange={handleChange5}/>
+          {JSON.stringify(selectedFruitList)}
         </div>
       </div>
     </>
