@@ -7,13 +7,14 @@ import './App.css'
 import List2 from './List2'
 // import StateDemo from './useState'
 // import ImmerDemo from './Immer'
-import RefDemo from './useRef'
-import UseMemoDemo from './useMemo'
+// import RefDemo from './useRef'
+// import UseMemoDemo from './useMemo'
 // import UseCallbackDemo from './useCallback'
 
 import useTitle from './hooks/useTitle' // 自定义hooks
 // import { useTitle }  from 'ahooks' // 第三方hooks
 // import useMouse from './hooks/useMouse'
+import FormDemo from './demo/FormDemo'
 
 // function useTitle(title: string) {
 //   useEffect(() => {
@@ -44,9 +45,10 @@ function App() {
       {/* <StateDemo /> */}
       <List2 />
       {/* <ImmerDemo /> */}
-      <RefDemo />
-      <UseMemoDemo />
+      {/* <RefDemo /> */}
+      {/* <UseMemoDemo /> */}
       {/* <UseCallbackDemo /> */}
+      <FormDemo />
     </>
   )
 }
