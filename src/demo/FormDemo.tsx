@@ -1,3 +1,5 @@
+// 受控组件
+
 import React, { FC, useState, ChangeEvent } from 'react'
 // import type { ChangeEvent } from 'react'
 
@@ -44,6 +46,13 @@ const FormDemo: FC = () => {
     }
   }
 
+  // select
+  const [lang, setLang] = useState<string>('js')
+  const handleChange6 = (event: ChangeEvent<HTMLSelectElement>) => {
+    setLang(event.target.value)
+  }
+
+
   return (
     <>
       <div>
@@ -81,6 +90,14 @@ const FormDemo: FC = () => {
           <label htmlFor="checkbox3">香蕉</label>
           <input type="checkbox" id='checkbox3' value='banana' checked={selectedFruitList.includes('banana')} onChange={handleChange5}/>
           {JSON.stringify(selectedFruitList)}
+        </div>
+        <div>
+          <span>select：</span>
+          <select value={lang} onChange={handleChange6}>
+            <option value='java'>java</option>
+            <option value='js'>js</option>
+            <option value='php'>php</option>
+          </select>
         </div>
       </div>
     </>
