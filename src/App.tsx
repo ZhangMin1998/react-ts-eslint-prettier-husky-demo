@@ -4,7 +4,7 @@ import './App.css'
 // import type { MouseEvent } from 'react'
 
 // import List1 from './List1'
-import List2 from './List2'
+// import List2 from './List2'
 // import StateDemo from './useState'
 // import ImmerDemo from './Immer'
 // import RefDemo from './useRef'
@@ -14,7 +14,9 @@ import List2 from './List2'
 import useTitle from './hooks/useTitle' // 自定义hooks
 // import { useTitle }  from 'ahooks' // 第三方hooks
 // import useMouse from './hooks/useMouse'
-import FormDemo from './demo/FormDemo'
+// import FormDemo from './demo/FormDemo'
+import CountReducer from './CountReducer'
+import TodoReducer from './TodoReducer'
 
 // function useTitle(title: string) {
 //   useEffect(() => {
@@ -43,12 +45,14 @@ function App() {
         <button onClick={add}>{count}</button>
       </div>
       {/* <StateDemo /> */}
-      <List2 />
+      {/* <List2 /> */}
       {/* <ImmerDemo /> */}
       {/* <RefDemo /> */}
       {/* <UseMemoDemo /> */}
       {/* <UseCallbackDemo /> */}
-      <FormDemo />
+      {/* <FormDemo /> */}
+      <CountReducer />
+      <TodoReducer />
     </>
   )
 }
