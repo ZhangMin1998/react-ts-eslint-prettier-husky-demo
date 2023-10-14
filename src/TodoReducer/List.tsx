@@ -1,10 +1,15 @@
-import React, { FC, useReducer } from 'react'
-import reducer from './reducer'
-import initialState from './store'
+import React, { FC, useContext } from 'react'
+// import reducer from './reducer'
+// import initialState from './store'
+import { TodoContext } from '.'
 
 const List:FC = () => {
   // const [state, dispatch] = useReducer(reducer, initialState)
-  const [state, dispatch] = useReducer(reducer, initialState)
+  // const [state, dispatch] = useReducer(reducer, initialState)
+  const context = useContext(TodoContext)
+  const { state, dispatch } = context
+  
+
   const del = (id: string) => {
     dispatch({
       type: 'delete',
